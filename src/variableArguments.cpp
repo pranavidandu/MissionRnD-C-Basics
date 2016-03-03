@@ -1,5 +1,4 @@
 #include <stdarg.h>
-
 /*
 OVERVIEW: 	A school has unknown number of students. Write a function that takes a variable number of arguments representing student marks in english
 and returns the number of students who scored > 90 marks.
@@ -17,5 +16,16 @@ NOTES: 		use stdarg.h header.
 
 int variableArguments(int arg_count, ...)
 {
-	return 0;
+	va_list args_list;
+	int i;
+
+	va_start(args_list, arg_count);
+	int count = 0;
+	for (int i = 0; i < arg_count; i++) {
+		int num = va_arg(args_list, int); // gets the next argument
+		if (num > 90)
+			count++;
+	}
+	va_end(args_list);
+	return count;
 }

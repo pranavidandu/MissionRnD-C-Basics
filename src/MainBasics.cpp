@@ -27,9 +27,8 @@ int main(){
 	printf("%d\n", sumTemp);
 	
 	//Test Count file
-	
 	int countTemp = count(5, 20);
-	printf("%d\n", countTemp);
+	printf("c %d\n", countTemp);
 
 
 	//Test Swap
@@ -38,8 +37,9 @@ int main(){
 	printf("%d %d\n", a, b);
 
 	//Is Older 
-	char date1[20] = "29-02-2004";
-	char date2[20] = "29-02-2000";
+	//29-02-2004 29-02-2000
+	char date1[20] = "29-02-2001";
+	char date2[20] = "15-07-2000";
 	int check=isOlder(date1, date2);
 	if (check == 0){
 		printf("Both are of same age \n");
